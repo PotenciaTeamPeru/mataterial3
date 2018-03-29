@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('admin.layoutde')
 
 @section('content')
 
@@ -26,3 +26,9 @@
 @include ('admin.sections.scripts.js-deposito')
 
 @endsection
+
+@push('jquery')
+
+{!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') !!}
+
+@endpush
