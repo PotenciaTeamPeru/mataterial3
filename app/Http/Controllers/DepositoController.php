@@ -24,18 +24,18 @@ class DepositoController extends Controller
             }
             */
 
-            public function visualTitular()
+            public function visualProveedor()
             {
-                $empresasid = Input::get('empresas_id');
-                $lsproveedores = Proveedore::where('empresa_id', '=', $empresasid)->get();
-                return response()->json($lsproveedores);
+                $empresas_id = Input::get('empresas_id');
+                $proveedores = Proveedore::where('empresa_id', '=', $empresas_id)->get();
+                return response()->json($proveedores);
             }
 
             public function visualCuenta()
             {
-                $proveedoresid = Input::get('proveedores_id');
-                $lscuentas = Cuenta::where('proveedor_id', '=', $proveedoresid)->get();
-                return response()->json($lscuentas);
+                $proveedores_id = Input::get('proveedores_id');
+                $cuentas = Cuenta::where('proveedor_id', '=', $proveedores_id)->get();
+                return response()->json($cuentas);
             }
 
  

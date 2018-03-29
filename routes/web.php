@@ -47,5 +47,5 @@ Route::resource('novedades', 'NovedadeController');
 /*
 	* fuentes de ajax para deposito select	
 */
-Route::get('/json-titulares','DepositoController@visualTitular');
+Route::get('/json-proveedores','DepositoController@visualProveedor');
 Route::get('/json-cuentas','DepositoController@visualCuenta');

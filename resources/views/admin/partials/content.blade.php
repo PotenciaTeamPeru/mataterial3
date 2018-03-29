@@ -1,42 +1,3 @@
-@extends('admin.global')
-
-@section('content')
-
-<div>
-	<div class="container-fluid">
-
-		<div class="title-block">
-			<h1 class="title"> Caracteristicas! </h1>
-			<p class="title-description"> Ingreso y visualizacion ... </p>
-		</div>
-		
-		<div class="">
-
-    @include ('admin.sections.links.lnk-transaccion')
-
-    @include ('admin.sections.forms.form-deposito')
-	
-		</div>
-
-    @include ('admin.sections.tables.tab-deposito')
-
-  </div>
-</div>
-    
-@include ('admin.sections.scripts.js-deposito')
-
-<script>
-    $(document).ready(function() {
-
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
-
-    });
-</script>
-
-@endsection
-
-
 <!-- ----- STYLE ----- -->
 
 @push('democss')
@@ -47,8 +8,16 @@
 {!! Html::style('/admin/css/material-dashboard.css?v=1.2.0') !!}
 @endpush
 
+@push('bootstrapcss')
+{!! Html::style('/admin/css/bootstrap.min.css') !!}
+@endpush
+
 @push('bootstrap337css')
 {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css') !!}
+@endpush
+
+@push('bootstrap335css')
+{!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css') !!}
 @endpush
 
 @push('awesomecss')
@@ -71,9 +40,20 @@
 {!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js') !!}
 @endpush
 
+@push('jquery321js')
+{!! Html::script('/admin/js/jquery-3.2.1.min.js') !!}
+@endpush
+
+@push('bootstrapjs')
+{!! Html::script('/admin/js/bootstrap.min.js') !!}
+@endpush
 
 @push('bootstrap337js')
 {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') !!}
+@endpush
+
+@push('bootstrap335js')
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js') !!}
 @endpush
 
 @push('materialjs')
@@ -113,6 +93,4 @@
 @endpush
 
 <!-- ------ JS ------ -->
-
-
 

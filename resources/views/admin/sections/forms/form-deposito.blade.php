@@ -12,7 +12,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group label-floating">
-							<select id="slempresa" name="slempresa" class="form-control">
+							<select id="empresas" name="empresas" class="form-control">
 								<option value="0" disable="true" selected="true" >
 									 Empresa
 								</option>
@@ -31,7 +31,7 @@
 
 					<div class="col-md-6">
 						<div class="form-group label-floating">
-							<select id="sltitular" name="sltitular" class="form-control">
+							<select id="proveedores" name="proveedores" class="form-control">
 								<option  value="0" disable="true" selected="true" >
 									 Titular 
 								</option>
@@ -42,7 +42,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group label-floating">
-							<select id="slcuenta" name="slcuenta" class="form-control">
+							<select id="cuenta_id" name="cuenta_id" class="form-control">
 								<option  value="0" disable="true" selected="true" >
 									 Cuenta 
 								</option>

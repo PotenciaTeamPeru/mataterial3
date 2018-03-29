@@ -1,32 +1,32 @@
 <script type="text/javascript">
-  $('#slempresa').on('change', function(e){
+  $.('#empresas').on('change', function(e) {
     console.log(e);
     var empresa_id = e.target.value;
-    $.get('/json-titulares?empresa_id=' + empresa_id,function(data) {
+    $.get('/json-proveedores?empresa_id=' + empresa_id,function(data) {
       console.log(data);
-      $('#sltitular').empty();
-      $('#sltitular').append('<option value="0" disable="true" selected="true"> = Titular = </option>');
+      $('#proveedores').empty();
+      $('#proveedores').append('<option value="0" disable="true" selected="true"> = Titular = </option>');
 
-      $('#slcuenta').empty();
-      $('#slcuenta').append('<option value="0" disable="true" selected="true"> = Cuenta = </option>');
+      $('#cuentas').empty();
+      $('#cuentas').append('<option value="0" disable="true" selected="true"> = Cuenta = </option>');
 
 
-      $.each(data, function(index, sltitularObj){
-        $('#sltitular').append('<option value="'+ sltitularObj.id +'">'+ sltitularObj.nombres +'</option>');
+      $.each(data, function(index, proveedoresObj){
+        $('#proveedores').append('<option value="'+ proveedoresObj.id +'">'+ proveedoresObj.nombres +'</option>');
       })
     });
   });
 
-  $('#regencies').on('change', function(e){
+  $('#proveedores').on('change', function(e){
     console.log(e);
-    var proveedor = e.target.value;
-    $.get('/json-cuentas?proveedor_id=' + proveedor_id,function(data) {
+    var proveedores_id = e.target.value;
+    $.get('/json-cuentas?proveedores_id=' + proveedores_id,function(data) {
       console.log(data);
-      $('#slcuenta').empty();
-      $('#slcuenta').append('<option value="0" disable="true" selected="true"> = Cuenta = </option>');
+      $('#cuentas').empty();
+      $('#cuentas').append('<option value="0" disable="true" selected="true"> = Cuenta = </option>');
 
       $.each(data, function(index, slcuentaObj){
-        $('#slcuenta').append('<option value="'+ slcuentaObj.id +'">'+ slcuentaObj.numero_cuenta +'</option>');
+        $('#cuentas').append('<option value="'+ cuentasObj.id +'">'+ cuentasObj.numero_cuenta +'</option>');
       })
     });
   });
@@ -34,9 +34,13 @@
 
 /*
  *  variables
+ *  listempresas => variable desde el controlador hacia la vista
  *  
+ *  vista_empresa => nombre del select empresa
+ *  vista_titular => nombre del select cuenta
  *  
- *  
+ *  json-titulares => vinculos desde el route web
+ *  json-cuentas   => 
  *  
  *  
  */
