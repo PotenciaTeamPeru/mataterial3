@@ -58,6 +58,12 @@ class DepositoController extends Controller
             return response()->json($districts);
             }
 
+            public function districtsorig(){
+            $regencies_id = Input::get('regencies_id');
+            $districts = Cuenta::where('proveedor_id', '=', $regencies_id)->get();
+            return response()->json($districts);
+            }
+
             public function villages(){
             $districts_id = Input::get('districts_id');
             $villages = Village::where('district_id', '=', $districts_id)->get();

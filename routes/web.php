@@ -57,6 +57,7 @@ Route::get('/json-cuentas','DepositoController@visualCuenta');
 Route::get('/indonesia','DepositoController@provinces');
 Route::get('/json-regencies','DepositoController@regencies');
 Route::get('/json-districts','DepositoController@districts');
+Route::get('/json-districts','DepositoController@districtsorig');
 Route::get('/json-village','DepositoController@villages');
 
 /*
