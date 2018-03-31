@@ -6,8 +6,7 @@
 		</div>
 		<div class="card-content">
 
-			<form method="POST" action="{{route('depositos.store')}}">
-				{!! csrf_field() !!}
+      {{ Form::open() }}
 
 				<div class="row">
 					<div class="col-md-6">
@@ -65,7 +64,9 @@
 				</div>
 				<button type="submit" class="btn btn-primary pull-right">Guardar</button>
 				<div class="clearfix"></div>
-			</form>
+
+			{{ Form::open() }}
+
 		</div>
 	</div>
 </div>

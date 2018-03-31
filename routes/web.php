@@ -49,3 +49,18 @@ Route::resource('novedades', 'NovedadeController');
 */
 Route::get('/json-proveedores','DepositoController@visualProveedor');
 Route::get('/json-cuentas','DepositoController@visualCuenta');
+
+/*
+	* fuentes de ajax para deposito select	
+*/
+
+Route::get('/indonesia','DepositoController@provinces');
+Route::get('/json-regencies','DepositoController@regencies');
+Route::get('/json-districts','DepositoController@districts');
+Route::get('/json-village','DepositoController@villages');
+
+/*
+	* fuentes de ajax para deposito select	
+*/
+
+
