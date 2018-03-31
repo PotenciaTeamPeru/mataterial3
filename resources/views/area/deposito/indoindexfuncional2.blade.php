@@ -21,8 +21,8 @@
         {{ Form::open() }}
           <div class="form-group">
             <label for="">Your Provinces</label>
-            <select class="form-control" name="empresa" id="empresa">
-              <option value="0" disable="true" selected="true">=== Empresas ===</option>
+            <select class="form-control" name="provinces" id="provinces">
+              <option value="0" disable="true" selected="true">=== Select Provinces ===</option>
                 @foreach ($provinces as $key => $value)
                   <option value="{{$value->id}}">{{ $value->nombre }}</option>
                 @endforeach
@@ -31,15 +31,15 @@
 
           <div class="form-group">
             <label for="">Your Regencies</label>
-            <select class="form-control" name="proveedor" id="proveedor">
-              <option value="0" disable="true" selected="true">=== Titulares ===</option>
+            <select class="form-control" name="regencies" id="regencies">
+              <option value="0" disable="true" selected="true">=== Select Regencies ===</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="">Your Districts</label>
-            <select class="form-control" name="cuenta_id" id="cuenta_id">
-              <option value="0" disable="true" selected="true">=== Cuentas ===</option>
+            <select class="form-control" name="districts" id="districts">
+              <option value="0" disable="true" selected="true">=== Select Districts ===</option>
             </select>
           </div>
 
@@ -51,33 +51,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-      $('#empresa').on('change', function(e){
+      $('#provinces').on('change', function(e){
         console.log(e);
         var province_id = e.target.value;
         $.get('/json-regencies?province_id=' + province_id,function(data) {
           console.log(data);
-          $('#proveedor').empty();
-          $('#proveedor').append('<option value="0" disable="true" selected="true">=== Titular ===</option>');
+          $('#regencies').empty();
+          $('#regencies').append('<option value="0" disable="true" selected="true">=== Select Regencies ===</option>');
 
-          $('#cuenta_id').empty();
-          $('#cuenta_id').append('<option value="0" disable="true" selected="true">=== Cuenta ===</option>');
+          $('#districts').empty();
+          $('#districts').append('<option value="0" disable="true" selected="true">=== Select Districts ===</option>');
 
           $.each(data, function(index, regenciesObj){
-            $('#proveedor').append('<option value="'+ regenciesObj.id +'">'+ regenciesObj.nombres +' '+ regenciesObj.apellido_paterno +'</option>');
+            $('#regencies').append('<option value="'+ regenciesObj.id +'">'+ regenciesObj.nombres +' '+ regenciesObj.apellido_paterno +'</option>');
           })
         });
       });
 
-      $('#proveedor').on('change', function(e){
+      $('#regencies').on('change', function(e){
         console.log(e);
         var regencies_id = e.target.value;
         $.get('/json-districts?regencies_id=' + regencies_id,function(data) {
           console.log(data);
-          $('#cuenta_id').empty();
-          $('#cuenta_id').append('<option value="0" disable="true" selected="true">=== Cuenta ===</option>');
+          $('#districts').empty();
+          $('#districts').append('<option value="0" disable="true" selected="true">=== Select Districts ===</option>');
 
           $.each(data, function(index, districtsObj){
-            $('#cuenta_id').append('<option value="'+ districtsObj.id +'">'+ districtsObj.numero_cuenta +'</option>');
+            $('#districts').append('<option value="'+ districtsObj.id +'">'+ districtsObj.numero_cuenta +'</option>');
           })
         });
       });
