@@ -23,7 +23,7 @@
             <label for="">Your Provinces</label>
             <select class="form-control" name="empresa" id="empresa">
               <option value="0" disable="true" selected="true">=== Empresas ===</option>
-                @foreach ($provinces as $key => $value)
+                @foreach ($mtempresas as $key => $value)
                   <option value="{{$value->id}}">{{ $value->nombre }}</option>
                 @endforeach
             </select>
@@ -51,33 +51,37 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
+
+
       $('#empresa').on('change', function(e){
         console.log(e);
-        var province_id = e.target.value;
-        $.get('/json-regencies?province_id=' + province_id,function(data) {
+        var vempresas_id = e.target.value;
+        $.get('/json-proveedores?vempresas_id=' + vempresas_id,function(data) {
           console.log(data);
+
           $('#proveedor').empty();
-          $('#proveedor').append('<option value="0" disable="true" selected="true">=== Titular ===</option>');
+          $('#proveedor').append('<option value="0" disable="true" selected="true"> Titulares </option>');
 
           $('#cuenta_id').empty();
-          $('#cuenta_id').append('<option value="0" disable="true" selected="true">=== Cuenta ===</option>');
+          $('#cuenta_id').append('<option value="0" disable="true" selected="true"> Cuentas </option>');
 
-          $.each(data, function(index, regenciesObj){
-            $('#proveedor').append('<option value="'+ regenciesObj.id +'">'+ regenciesObj.nombres +' '+ regenciesObj.apellido_paterno +'</option>');
+          $.each(data, function(index, jproveedoresObj){
+            $('#proveedor').append('<option value="'+ jproveedoresObj.id +'">'+ jproveedoresObj.nombres +' '+ jproveedoresObj.apellido_paterno +'</option>');
           })
         });
       });
 
+
       $('#proveedor').on('change', function(e){
         console.log(e);
-        var regencies_id = e.target.value;
-        $.get('/json-districts?regencies_id=' + regencies_id,function(data) {
+        var vcuentas = e.target.value;
+        $.get('/json-cuentas?vcuentas=' + vcuentas,function(data) {
           console.log(data);
           $('#cuenta_id').empty();
-          $('#cuenta_id').append('<option value="0" disable="true" selected="true">=== Cuenta ===</option>');
+          $('#cuenta_id').append('<option value="0" disable="true" selected="true"> Cuenta </option>');
 
-          $.each(data, function(index, districtsObj){
-            $('#cuenta_id').append('<option value="'+ districtsObj.id +'">'+ districtsObj.numero_cuenta +'</option>');
+          $.each(data, function(index, jcuentasObj){
+            $('#cuenta_id').append('<option value="'+ jcuentasObj.id +'">'+ jcuentasObj.numero_cuenta +'</option>');
           })
         });
       });

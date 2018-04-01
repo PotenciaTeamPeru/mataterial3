@@ -41,35 +41,27 @@ class DepositoController extends Controller
 
 
 
-            public function provinces(){
-            $provinces = Empresa::all();
-            return view('area.deposito.indoindex', compact('provinces'));
+            public function moEmpresas(){
+            $mtempresas = Empresa::all();
+            return view('area.deposito.indoindex', compact('mtempresas'));
             }
 
-            public function regencies(){
-            $provinces_id = Input::get('province_id');
-            $regencies = Proveedore::where('empresa_id', '=', $provinces_id)->get();
-            return response()->json($regencies);
+
+
+
+
+
+            public function moProveedores(){
+            $vempresas_id = Input::get('vempresas_id');
+            $jproveedores = Proveedore::where('empresa_id', '=', $vempresas_id)->get();
+            return response()->json($jproveedores);
             }
 
-            public function districts(){
-            $regencies_id = Input::get('regencies_id');
-            $districts = Cuenta::where('proveedor_id', '=', $regencies_id)->get();
-            return response()->json($districts);
+            public function moCuentas(){
+            $vcuentas = Input::get('vcuentas');
+            $jcuentas = Cuenta::where('proveedor_id', '=', $vcuentas)->get();
+            return response()->json($jcuentas);
             }
-
-            public function districtsorig(){
-            $regencies_id = Input::get('regencies_id');
-            $districts = Cuenta::where('proveedor_id', '=', $regencies_id)->get();
-            return response()->json($districts);
-            }
-
-            public function villages(){
-            $districts_id = Input::get('districts_id');
-            $villages = Village::where('district_id', '=', $districts_id)->get();
-            return response()->json($villages);
-            }
-
 
  
     /**

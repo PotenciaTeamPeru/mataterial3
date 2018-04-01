@@ -54,11 +54,9 @@ Route::get('/json-cuentas','DepositoController@visualCuenta');
 	* fuentes de ajax para deposito select	
 */
 
-Route::get('/indonesia','DepositoController@provinces');
-Route::get('/json-regencies','DepositoController@regencies');
-Route::get('/json-districts','DepositoController@districts');
-Route::get('/json-districts','DepositoController@districtsorig');
-Route::get('/json-village','DepositoController@villages');
+Route::get('/indonesia','DepositoController@moEmpresas');
+Route::get('/json-proveedores','DepositoController@moProveedores');
+Route::get('/json-cuentas','DepositoController@moCuentas');
 
 /*
 	* fuentes de ajax para deposito select	
