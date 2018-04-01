@@ -11,12 +11,12 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group label-floating">
-							<select id="empresas" name="empresas" class="form-control">
+							<select id="empresa" name="empresa" class="form-control">
 								<option value="0" disable="true" selected="true" >
-									 Empresa
+									 == Empresas ==
 								</option>
 	
-                  @foreach($listempresas as $key => $value)
+                  @foreach($lsempresas as $key => $value)
 
                       <option value="{{ $value->id }}">
                           {{ $value->nombre }} 
@@ -30,9 +30,9 @@
 
 					<div class="col-md-6">
 						<div class="form-group label-floating">
-							<select id="proveedores" name="proveedores" class="form-control">
+							<select id="proveedor" name="proveedor" class="form-control">
 								<option  value="0" disable="true" selected="true" >
-									 Titular 
+									 == Titulares == 
 								</option>
 							</select>
 						</div>
@@ -43,7 +43,7 @@
 						<div class="form-group label-floating">
 							<select id="cuenta_id" name="cuenta_id" class="form-control">
 								<option  value="0" disable="true" selected="true" >
-									 Cuenta 
+									 ==Cuentas ==
 								</option>
 							</select>
 						</div>

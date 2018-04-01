@@ -1,6 +1,6 @@
 <!-- Seccion de  -- STYLE -- -->
 
-{!! Html::style('/admin/css/demo.css') !!}
+{!! Html::style('/admin/css/init.css') !!}
 {!! Html::style('/admin/css/material-dashboard.css?v=1.2.0') !!}
 {!! Html::style('/admin/css/bootstrap.min.css') !!}
 {!! Html::style('http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css') !!}

@@ -14,50 +14,18 @@ use App\Proveedore;
 class DepositoController extends Controller
 {
 
-            /**
-             *  funciones para listar en el from
-             */
-            /*public function visualEmpresa()
-            {
-                $lsempresas = Empresa::all();
-                return view('indonesia', compact('lsempresas'));
-            }
-            */
-
-            public function visualProveedor()
-            {
-                $empresas_id = Input::get('empresas_id');
-                $proveedores = Proveedore::where('empresa_id', '=', $empresas_id)->get();
-                return response()->json($proveedores);
+            public function listEmpresas(){
+            $lsempresas = Empresa::all();
+            return view('area.deposito.indoindex', compact('lsempresas'));
             }
 
-            public function visualCuenta()
-            {
-                $proveedores_id = Input::get('proveedores_id');
-                $cuentas = Cuenta::where('proveedor_id', '=', $proveedores_id)->get();
-                return response()->json($cuentas);
-            }
-
-
-
-
-            public function moEmpresas(){
-            $mtempresas = Empresa::all();
-            return view('area.deposito.indoindex', compact('mtempresas'));
-            }
-
-
-
-
-
-
-            public function moProveedores(){
+            public function listProveedores(){
             $vempresas_id = Input::get('vempresas_id');
             $jproveedores = Proveedore::where('empresa_id', '=', $vempresas_id)->get();
             return response()->json($jproveedores);
             }
 
-            public function moCuentas(){
+            public function listCuentas(){
             $vcuentas = Input::get('vcuentas');
             $jcuentas = Cuenta::where('proveedor_id', '=', $vcuentas)->get();
             return response()->json($jcuentas);
@@ -83,13 +51,13 @@ class DepositoController extends Controller
         //agregado
             $ltempresas = Empresa::pluck('nombre', 'id'); 
              $ltcuentas = Cuenta::pluck('numero_cuenta', 'id'); 
-            $listempresas = Empresa::all();
+            $lsempresas = Empresa::all();
 
 
 
 
         //Redireccionar
-        return view('area.deposito.index', compact('depositos', 'empresas', 'cuentas', 'bancos', 'proveedores', 'ltempresas', 'ltcuentas', 'listempresas'));
+        return view('area.deposito.index', compact('depositos', 'empresas', 'cuentas', 'bancos', 'proveedores', 'ltempresas', 'ltcuentas', 'lsempresas'));
 
     }
 

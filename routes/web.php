@@ -43,23 +43,14 @@ Route::resource('precioventa', 'PrecioVentaController');
 
 Route::resource('novedades', 'NovedadeController');
 
-
-/*
-	* fuentes de ajax para deposito select	
-*/
-Route::get('/json-proveedores','DepositoController@visualProveedor');
-Route::get('/json-cuentas','DepositoController@visualCuenta');
-
 /*
 	* fuentes de ajax para deposito select	
 */
 
-Route::get('/indonesia','DepositoController@moEmpresas');
-Route::get('/json-proveedores','DepositoController@moProveedores');
-Route::get('/json-cuentas','DepositoController@moCuentas');
+//Route::get('/indonesia','DepositoController@listEmpresas');
+Route::get('/json-proveedores','DepositoController@listProveedores');
+Route::get('/json-cuentas','DepositoController@listCuentas');
 
 /*
 	* fuentes de ajax para deposito select	
 */
-
-
