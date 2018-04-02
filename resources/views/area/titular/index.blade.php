@@ -1,4 +1,4 @@
-@extends('admin.sections.layout')
+@extends('admin.layout')
 
 @section('content')
 
@@ -10,32 +10,25 @@
 		      <div class="card-content">
 					<ul class="nav nav-pills nav-pills-icons nav-pills-primary">
 
-		            <?php
-		               function activeMenu($url){
-		                  return request()->is($url) ? 'active' : '';
-		               }
-		            ?>
-
-
-		            <li class="{{ activeMenu('depositos')}}">
+		            <li class="{{ request()->is('depositos') ? 'active' : ''}}">
 		               <a href="{{ route ('depositos.index')}}">
 		                  <i class="material-icons">local_atm</i>
 		                  Depositos
 		               </a>
 		            </li>
-		            <li class="{{ activeMenu('bancos')}}">
+		            <li class="{{ request()->is('bancos') ? 'active' : ''}}">
 		               <a href="{{ route ('bancos.index')}}">
 		                  <i class="material-icons">business</i>
 		                  Bancos
 		                </a>
 		            </li>
-		            <li class="{{ activeMenu('cuentas')}}">
+		            <li class="{{ request()->is('cuentas') ? 'active' : ''}}">
 		               <a href="{{ route ('cuentas.index')}}">
 		                  <i class="material-icons">storage</i>
 		                  Cuentas
 		               </a>
 		            </li>
-		            <li class="{{ activeMenu('titulares')}}">
+		            <li class="{{ request()->is('titulares') ? 'active' : ''}}">
 		               <a href="{{ route ('titulares.index')}}">
 		                  <i class="material-icons">supervisor_account</i>
 		                  Titulares

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-
 use App\Banco;
 
+use Illuminate\Http\Request;
 
 class BancoController extends Controller
 {
@@ -18,10 +16,12 @@ class BancoController extends Controller
     public function index()
     {
 
-        //Guardar
-        $bancos = Banco::all();
+        //  variables de uso en el form
 
-        //Redireccionar
+        //  variables de uso en el table
+            $bancos     = Banco::all();
+
+         // devuelve la vista y envia variables a la vista
         return view('area.banco.index', compact('bancos'));
 
     }

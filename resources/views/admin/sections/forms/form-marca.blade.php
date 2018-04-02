@@ -12,20 +12,30 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group label-floating">
-							<label class="control-label">Nombre</label>
-							<input name="marca_empresa_id" type="text" class="form-control">
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="form-group label-floating">
-							<label class="control-label">Direccion</label>
-							<input name="marca" type="text" class="form-control">
+							<select name="banco_id" class="form-control">
+								<option value=""> Empresa </option>
+
+							@foreach($empresas as $empresa)
+								<option value="{{ $empresa->id }}">
+									{{ $empresa->nombre }} 
+								</option>
+							@endforeach
+
+							</select>
+
 						</div>
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group label-floating">
+							<label class="control-label">Marca</label>
+							<input name="nombre" type="text" class="form-control">
+						</div>
+					</div>
+				</div>
+				
 				<button type="submit" class="btn btn-primary pull-right">Guardar</button>
 				<div class="clearfix"></div>
 			</form>

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Marca;
 use App\Empresa;
+
+use Illuminate\Http\Request;
 
 class MarcaController extends Controller
 {
@@ -17,12 +17,13 @@ class MarcaController extends Controller
     public function index()
     {
 
-        //Guardar
-        $marcas = Marca::all();
-        $ltempresas = Empresa::pluck('nombre', 'id'); 
+        //  variables de uso en el form
+           $empresas    = Empresa::all();
+        //  variables de uso en el table
+            $marcas     = Marca::all();
 
-        //Redireccionar
-        return view('area.marca.index', compact('marcas', 'ltempresas'));
+         // devuelve la vista y envia variables a la vista
+        return view('area.marca.index', compact('marcas', 'empresas'));
 
     }
 

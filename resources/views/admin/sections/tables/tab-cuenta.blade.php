@@ -7,19 +7,19 @@
         <div class="card-content table-responsive">
             <table class="table table-hover">
                 <thead class="text-warning">
-                    <th>ID</th>
+
                     <th>Banco</th>
                     <th>Proveedor</th>
                     <th>Nro de Cuenta</th>
                     <th>Moneda</th>
-                    <th>Acciones</th>
+                    <!--<th>Acciones</th>-->
+
                 </thead>
                 <tbody>
 
                     @foreach ($cuentas as $cuenta)
                     <tr class="odd gradeA">
-                        <td>{{ $cuenta->id }}</td>
-                        <td>{{ $cuenta->vBanco->nombre }}</td>
+                        <td>{{ $cuenta->vBanco->acronimo }}</td>
                         <td>{{ $cuenta->vProveedor->nombres." ".$cuenta->vProveedor->apellido_paterno." ".$cuenta->vProveedor->apellido_materno }}</td>
                         <td>{{ $cuenta->numero_cuenta }}</td>
 
@@ -35,8 +35,9 @@
                         ?>   
                         <td>{{ $monedaletras }}</td>
 
-                        <td>
                             <!-- Botones de edicion -->
+                        <!--
+                        <td>
                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mCuentaMostrar" value="{{ $cuenta->id }}">
                             <i class="material-icons">crop_5_4</i> 
                             </button>
@@ -50,6 +51,7 @@
                             </button>               
 
                         </td>
+                        -->
 
 
                     </tr>

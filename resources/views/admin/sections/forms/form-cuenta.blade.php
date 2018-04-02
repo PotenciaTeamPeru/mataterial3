@@ -52,7 +52,7 @@
 
 							<select name="moneda" class="form-control">
 								<option value=""> Moneda </option>
-								<option value="1"> Soles </option>
+								<option value="1" selected> Soles </option>
 								<option value="2"> Dolares </option>
 								<option value="3"> Euros </option>
 								<option value="4"> Bolivianos </option>

@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
-
 use App\Deposito;
 use App\Empresa;
 use App\Cuenta;
-use App\Banco;
 use App\Proveedore;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class DepositoController extends Controller
 {
-
+        /*
+         *  funciones de conexion 
+         *  con ajax para el form  
+         *  de ingredso de depositos 
+         */
             public function listEmpresas(){
             $lsempresas = Empresa::all();
             return view('area.deposito.indoindex', compact('lsempresas'));
@@ -40,24 +43,13 @@ class DepositoController extends Controller
     public function index()
     {
 
-        //Guardar
-          $depositos = Deposito::all();
-           $empresas = Empresa::all();
-            $cuentas = Cuenta::all();
-             $bancos = Banco::all();
-        $proveedores = Proveedore::all();
+        //  variables de uso en el form
+           $empresas    = Empresa::all();
+        //  variables de uso en el table
+          $depositos    = Deposito::all();
 
-
-        //agregado
-            $ltempresas = Empresa::pluck('nombre', 'id'); 
-             $ltcuentas = Cuenta::pluck('numero_cuenta', 'id'); 
-            $lsempresas = Empresa::all();
-
-
-
-
-        //Redireccionar
-        return view('area.deposito.index', compact('depositos', 'empresas', 'cuentas', 'bancos', 'proveedores', 'ltempresas', 'ltcuentas', 'lsempresas'));
+         // devuelve la vista y envia variables a la vista
+        return view('area.deposito.index', compact('depositos', 'empresas'));
 
     }
 

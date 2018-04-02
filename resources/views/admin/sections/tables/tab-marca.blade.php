@@ -7,10 +7,11 @@
         <div class="card-content table-responsive">
             <table class="table table-hover">
                 <thead class="text-warning">
+
                     <th>ID</th>
                     <th>Empresa</th>
                     <th>Marca</th>
-                    <th>Acciones</th>
+
                 </thead>
                 <tbody>
 
@@ -20,8 +21,9 @@
                         <td>{{ $marca->empresa_id }}</td>
                         <td>{{ $marca->marca }}</td>
 
-                        <td>
                             <!-- Botones de edicion -->
+                        <!--
+                        <td>
                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mMarcaMostrar" value="{{ $marca->id }}">
                             <i class="material-icons">crop_5_4</i> 
                             </button>
@@ -35,7 +37,7 @@
                             </button>               
 
                         </td>
-
+                        -->
 
                     </tr>
                     @endforeach

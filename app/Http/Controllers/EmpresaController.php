@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-
 use App\Empresa;
 use App\Proveedore;
 
+use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {

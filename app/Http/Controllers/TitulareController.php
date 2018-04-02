@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Proveedore;
 use App\Empresa;
+
 use Illuminate\Http\Request;
 
 class TitulareController extends Controller
@@ -16,14 +17,13 @@ class TitulareController extends Controller
     public function index()
     {
 
-        //Guardar
-         $proveedores = Proveedore::all();
-          $empresas = Empresa::all();
+        //  variables de uso en el form
+           $empresas    = Empresa::all();
+        //  variables de uso en el table
+         $proveedores   = Proveedore::all();
 
-        $ltempresas = Empresa::pluck('nombre', 'id'); 
-        
-        //Redireccionar
-        return view('area.titular.index', compact('proveedores', 'empresas',  'ltempresas'));
+         // devuelve la vista y envia variables a la vista
+        return view('area.titular.index', compact('proveedores', 'empresas'));
 
     }
 

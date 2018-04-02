@@ -2,9 +2,6 @@
 
 namespace App;
 
-use Banco;
-use Proveedore;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Cuenta extends Model
@@ -20,16 +17,10 @@ class Cuenta extends Model
 			return $this->belongsTo('App\Banco', 'banco_id', 'id');
 		}
 
-	// Funcion para reemplazar el id por el nombre de la Empresa
+	// Funcion para reemplazar el id por el nombre del Proveedor
 	public function vProveedor()
 		{
 			return $this->belongsTo('App\Proveedore', 'proveedor_id', 'id');
-		}
-
-	public static function cuentas($id)
-		{
-			return Cuenta::where('proveedor_id','=',$id)
-			->get();
 		}
 
 }

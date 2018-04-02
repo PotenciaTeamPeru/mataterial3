@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Detalle;
+
 use Illuminate\Http\Request;
 
 class DetalleController extends Controller
@@ -15,10 +16,12 @@ class DetalleController extends Controller
     public function index()
     {
 
-        //Guardar
-        $detalles = Detalle::all();
+        //  variables de uso en el form
 
-        //Redireccionar
+        //  variables de uso en el table
+            $detalles   = Detalle::all();
+
+         // devuelve la vista y envia variables a la vista
         return view('area.detalle.index', compact('detalles'));
 
     }

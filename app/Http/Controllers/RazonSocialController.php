@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\RazonSocial;
 use App\Empresa;
+
+use Illuminate\Http\Request;
 
 class RazonSocialController extends Controller
 {
@@ -17,13 +17,12 @@ class RazonSocialController extends Controller
     public function index()
     {
 
-        //Guardar
-        $razonsocial = RazonSocial::all();
-        $empresas = Empresa::all();
-        $ltempresas = Empresa::pluck('nombre', 'id'); 
+        //  variables de uso en el form
+           $empresas    = Empresa::all();
+        //  variables de uso en el table
+        $razonsocial    = RazonSocial::all();
 
-
-        //Redireccionar
+         // devuelve la vista y envia variables a la vista
         return view('area.razon-social.index', compact('razonsocial', 'empresas'));
 
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Banco;
 use App\Cuenta;
 use App\Proveedore;
+
 use Illuminate\Http\Request;
 
 class CuentaController extends Controller
@@ -17,20 +18,14 @@ class CuentaController extends Controller
     public function index()
     {
 
-        //Guardar
+        //  variables de uso en el form
             $bancos      = Banco::all();
-            $cuentas     = Cuenta::all();
             $proveedores = Proveedore::all();
+        //  variables de uso en el table
+            $cuentas     = Cuenta::all();
 
-        //Visualizar para SELECT
-            $ltbancos    = Banco::pluck('nombre', 'id'); 
-        /* 
-         Consulta usando DB
-         $selproveedores = DB::table('proveedores')->select('id', 'nombres', 'apellido_paterno', 'apellido_materno')->get();
-         */
-
-        //Redireccionar
-        return view('area.cuenta.index', compact('bancos', 'cuentas', 'proveedores', 'ltbancos'));
+         // devuelve la vista y envia variables a la vista
+        return view('area.cuenta.index', compact('bancos', 'cuentas', 'proveedores'));
 
     }
 

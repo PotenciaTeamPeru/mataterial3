@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Proveedore extends Model
+
 {
 
 	protected $fillable = ['nombres', 'apellido_paterno', 'apellido_materno', 'tipo_identificacion','numero_identificacion', 'empresa_id', 'cargo_parentezco'];
@@ -16,12 +17,5 @@ class Proveedore extends Model
 		{
 			return $this->belongsTo('App\Empresa', 'empresa_id', 'id');
 		}
-
-
-	public static function proveedores($id)
-	{
-		return Proveedore::where('empresa_id','=',$id)
-		->get();
-	}
 
 }

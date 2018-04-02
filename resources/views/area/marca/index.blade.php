@@ -11,7 +11,7 @@
 		
 		<div class="">
 
-    @include ('admin.sections.links.lnk-transaccion')
+    @include ('admin.sections.links.lnk-proveedor')
 
     @include ('admin.sections.forms.form-marca')
 	

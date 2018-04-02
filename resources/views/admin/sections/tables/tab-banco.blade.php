@@ -7,23 +7,23 @@
         <div class="card-content table-responsive">
             <table class="table table-hover">
                 <thead class="text-warning">
-                    <th>ID</th>
+
                     <th>Nombre</th>
                     <th>Acronimo</th>
                     <th>Direccion</th>
-                    <th>Acciones</th>
+
                 </thead>
                 <tbody>
 
                     @foreach ($bancos as $banco)
                     <tr class="odd gradeA">
-                        <td>{{ $banco->id }}</td>
                         <td>{{ $banco->nombre }}</td>
                         <td>{{ $banco->acronimo }}</td>
                         <td>{{ $banco->direccion }}</td>
 
-                        <td>
                             <!-- Botones de edicion -->
+                        <!--
+                        <td>
                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#mBancoMostrar" value="{{ $banco->id }}">
                             <i class="material-icons">crop_5_4</i> 
                             </button>
@@ -37,7 +37,7 @@
                             </button>               
 
                         </td>
-
+                        -->
 
                     </tr>
                     @endforeach

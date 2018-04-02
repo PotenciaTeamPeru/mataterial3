@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-
 use App\Empresa;
 use App\Proveedore;
-use App\Http\Requests\CreateProveedoreRequest;
 
+use Illuminate\Http\Request;
 
 class ProveedoreController extends Controller
 {
@@ -24,15 +21,13 @@ class ProveedoreController extends Controller
     public function index()
     {
 
-        //Visualizar
-           $empresas = Empresa::all();
+        //  variables de uso en el form
+           $empresas    = Empresa::all();
+        //  variables de uso en el table
         $proveedores = Proveedore::all();
 
-        //Visualizar para SELECT
-         $ltempresas = Empresa::pluck('nombre', 'id'); 
-
-        //Redireccionar
-        return view('area.proveedor.index', compact('empresas', 'proveedores', 'ltempresas'));
+         // devuelve la vista y envia variables a la vista
+        return view('area.proveedor.index', compact('empresas', 'proveedores'));
 
 
     }

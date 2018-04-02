@@ -14,25 +14,4 @@ class Titulare extends Model
 			return $this->belongsTo('App\Empresa', 'empresa_id', 'id');
 		}
 
-/*
-
-	public function empresas_id()
-		{
-			return $this->belongsTo(Pempresa::class);
-		}
-
-
-public function buscaEmpresa(array $codigo_empresa)
-{
-return $this->nombreEmpresa->pluck('nombre')->intersect($empresas)->count();
-}
-
-
-public function laEmpresa()
-{
-return $this->hasOne('App\Empresa', 'id', 'codigo_empresa', 'nombre' );
-}
-
-*/
-
 }
