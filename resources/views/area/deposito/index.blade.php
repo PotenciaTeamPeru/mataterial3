@@ -6,8 +6,7 @@
 	<div class="container-fluid">
 
 		<div class="title-block">
-			<h1 class="title"> Caracteristicas! </h1>
-			<p class="title-description"> Ingreso y visualizacion ... </p>
+
 		</div>
 		
 		<div class="">
@@ -16,7 +15,6 @@
 
     @include ('admin.sections.forms.form-deposito')
   	
-  	@include ('admin.sections.scripts.js-deposito')
 	
 		</div>
 
@@ -25,6 +23,10 @@
   </div>
 </div>
   
+  	@push ('js-depo')
 
-</script>
+  	{!! Html::script('/admin/js/list-depo.js') !!}
+  	
+  	@endpush
+  	
 @endsection

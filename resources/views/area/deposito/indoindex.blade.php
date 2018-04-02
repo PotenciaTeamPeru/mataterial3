@@ -17,10 +17,10 @@
   <body>
     <div class="container">
       <div class="col-lg-4">
-        <h2>Laravel 5.5 JQuery Ajax Example</h2>
-        {{ Form::open() }}
+        <h2>Depositos Simple</h2>
+        {{ Form::open(['route' => 'depositos.store']) }}
           <div class="form-group">
-            <label for="">Your Provinces</label>
+            <label for=""> Empresa </label>
             <select class="form-control" name="empresa" id="empresa">
               <option value="0" disable="true" selected="true">=== Empresas ===</option>
                 @foreach ($lsempresas as $key => $value)
@@ -30,18 +30,31 @@
           </div>
 
           <div class="form-group">
-            <label for="">Your Regencies</label>
+            <label for=""> Titular </label>
             <select class="form-control" name="proveedor" id="proveedor">
               <option value="0" disable="true" selected="true">=== Titulares ===</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label for="">Your Districts</label>
+            <label for=""> Cuenta </label>
             <select class="form-control" name="cuenta_id" id="cuenta_id">
               <option value="0" disable="true" selected="true">=== Cuentas ===</option>
             </select>
           </div>
+
+          <div class="form-group">
+            <label for=""> Monto </label>
+            <input type="text" class="form-control" name="monto" id="monto">
+          </div>
+
+          <div class="form-group">
+            <label for=""> Fecha </label>
+            <input type="date" class="form-control" name="fecha_deposito" id="fecha_deposito">
+          </div>
+            <button type="submit" class="btn btn-primary pull-right" >
+              Guardar
+            </button>
 
         {{ Form::close() }}
       </div>

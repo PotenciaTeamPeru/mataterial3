@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="viewport" content="{{ csrf_token() }}" />
-        <link rel="icon" type="image/png" href="/admin/assets/favicon.png" />
+        <link rel="icon" type="image/png" href="/admin/img/favicon.png" />
         <title>
             Material Systems 
         </title>
@@ -34,6 +34,8 @@
         </div>
 
         @include ('admin.partials.js')
+        
+        @stack('js-depo')
 
     </body>
 </html>
